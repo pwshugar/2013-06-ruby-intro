@@ -54,7 +54,7 @@ recommended way to run them as we might build more functionality into this task)
     # runs the extra credit exercises  
 
 Windows is the same thing
-
+p
     c:\ruby_koans\rake                             # runs the default target :walk_the_path
     c:\ruby_koans\ruby path_to_enlightenment.rb    # simply call the file directly
 

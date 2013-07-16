@@ -1,0 +1,2 @@
+
+watch( '.*\.rb' )  {|md| system("clear && rake") }
