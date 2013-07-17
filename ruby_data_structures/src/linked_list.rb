@@ -29,7 +29,7 @@ class LinkedList
   end
 
   def contains?(value, node = @head)
-    node.value == value ? true : node.next != nil ? self. contains?(value, node.next) : false
+    node.value == value ? true : node.next != nil ? self.contains?(value, node.next) : false
   end
 
   def removeHead

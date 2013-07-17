@@ -19,24 +19,27 @@ describe Tree do
     end
   end
 
-  # describe '#removeFromParent' do
-  #   it 'should remove a child from its parent' do
-  #     @tree.addChild('first')
-  #     @tree.children[0].addChild('second')
-  #     @tree.children[0].children[0].removeFromParent
-  #     @tree.children[0].children.should == nil
-  #   end
-  # end
+  describe '#removeFromParent' do
+    it 'should remove a child from its parent' do
+      @tree.addChild('first')
+      @tree.children[0].addChild('second')
+      @tree.children[0].addChild('third')      
+      @tree.children[0].children[0].removeFromParent
+      @tree.children[0].children[0].value.should == 'third'
+      @tree.children[0].children[0].removeFromParent
+      @tree.children[0].children.should == nil      
+    end
+  end
 
-  # describe '#contains' do
-  #   it 'should find a node in the list' do
-  #     @linkedList.addToTail('first node')
-  #     @linkedList.addToTail('second node')
-  #     @linkedList.addToTail('third node')
-  #     @linkedList.contains?('second node').should == true
-  #     @linkedList.contains?('fourth node').should == false
-  #   end
-  # end
+  describe '#contains' do
+    it 'should find a node value in the tree' do
+      @tree.addChild('first')
+      @tree.children[0].addChild('second')
+      @tree.children[0].children[0].addChild('third')
+      @tree.contains?('second').should == true      
+      @tree.contains?('123').should == true
+    end
+  end
 
   # describe '#removeHead' do
   #   it 'should remove the head from a list' do
