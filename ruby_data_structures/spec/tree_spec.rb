@@ -10,35 +10,21 @@ describe Tree do
     @tree.parent.should == nil
   end
 
-  # describe '#addToTail' do
-  #   it 'should add a node to the tail' do
-  #     @linkedList.addToTail('first node')
-  #     @linkedList.head.value.should == 'first node'
-  #     @linkedList.tail.value.should == 'first node'
-  #   end
-  #   it 'should be able to add a second node to tail' do
-  #     @linkedList.addToTail('first node')
-  #     @linkedList.addToTail('second node')
-  #     @linkedList.head.value.should == 'first node'
-  #     @linkedList.tail.value.should == 'second node'
-  #     @linkedList.head.next.value.should == @linkedList.tail.value
-  #     @linkedList.tail.previous.value.should == @linkedList.head.value
-  #   end
-  # end
+  describe '#addChild' do
+    it 'children added to tree should have value and parent properties' do
+      @tree.addChild('first')
+      @tree.children[0].addChild('second')
+      @tree.children[0].children[0].value.should == 'second'
+      @tree.children[0].children[0].parent.value.should == 'first'
+    end
+  end
 
-  # describe '#addToHead' do
-  #   it 'should add a node to the head' do
-  #     @linkedList.addToHead('first node')
-  #     @linkedList.head.value.should == 'first node'
-  #     @linkedList.tail.value.should == 'first node'
-  #   end
-  #   it 'should be able to add a second node to head' do
-  #     @linkedList.addToHead('second node')
-  #     @linkedList.addToHead('first node')
-  #     @linkedList.head.value.should == 'first node'
-  #     @linkedList.tail.value.should == 'second node'
-  #     @linkedList.head.next.value.should == @linkedList.tail.value
-  #     @linkedList.tail.previous.value.should == @linkedList.head.value
+  # describe '#removeFromParent' do
+  #   it 'should remove a child from its parent' do
+  #     @tree.addChild('first')
+  #     @tree.children[0].addChild('second')
+  #     @tree.children[0].children[0].removeFromParent
+  #     @tree.children[0].children.should == nil
   #   end
   # end
 
