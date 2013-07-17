@@ -36,29 +36,11 @@ describe Tree do
       @tree.addChild('first')
       @tree.children[0].addChild('second')
       @tree.children[0].children[0].addChild('third')
-      @tree.contains?('second').should == true      
-      @tree.contains?('123').should == true
+      @tree.contains?('first').should == true
+      @tree.contains?('second').should == true    
+      @tree.contains?('third').should == true        
+      @tree.contains?('123').should == false
     end
   end
-
-  # describe '#removeHead' do
-  #   it 'should remove the head from a list' do
-  #     @linkedList.addToTail('first node')
-  #     @linkedList.addToTail('second node')
-  #     @linkedList.removeHead
-  #     @linkedList.head.value.should == 'second node'
-  #     @linkedList.tail.value.should == 'second node'
-  #   end
-  # end
-
-  # describe '#removeTail' do
-  #   it 'should remove the tail from a list' do
-  #     @linkedList.addToTail('first node')
-  #     @linkedList.addToTail('second node')
-  #     @linkedList.removeTail
-  #     @linkedList.tail.value.should == 'first node'
-  #     @linkedList.head.value.should == 'first node'
-  #   end
-  # end
 
 end

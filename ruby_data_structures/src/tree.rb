@@ -19,24 +19,7 @@ class Tree
   end
 
   def contains?(value)
-    flag = false
-    def recurse(value, node)
-      return true
-      # if node.value == value
-      #   flag = true
-      # end
-      # if node.children != nil
-      #   i = 0
-      #   while i < node.children.length
-      #     puts node.children[i].value
-      #     recurse(value, node.children[i])
-      #     i+=1
-      #   end
-      # end
-    end
-    recurse(value, self)
-    return flag
+    true if self.value == value
+    @children.any? { |node| node.value == value or node.contains?(value) } if self.children
   end
-
-
 end
